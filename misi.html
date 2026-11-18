@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0d2225" />
+  <meta name="description" content="Photobooth VULCANEOS — abadikan kunjunganmu ke Anak Krakatau." />
+  <title>Photobooth · VULCANEOS</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="volcanoes-favicon-32.png?v=2" />
+  <link rel="icon" type="image/png" sizes="512x512" href="volcanoes-favicon.png?v=2" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="photo-booth.css?v=20261110-17" />
+</head>
+<body class="photo-page">
+  <header class="photo-header">
+    <a class="photo-brand" href="index.html" aria-label="Kembali ke VULCANEOS">
+      <span class="photo-logo"><img src="volcanoes-transparent.png" alt="" /></span>
+      <span><b>VULCANEOS</b><small>VOLCANIC &amp; OCEAN INTELLIGENCE</small></span>
+    </a>
+    <div class="photo-header-right"><span class="photo-header-label"><i></i> PESISIR PHOTOBOOTH</span><a href="sumber.html"><i class="fa-solid fa-book"></i> Sumber</a><a href="index.html"><i class="fa-solid fa-arrow-left"></i> Beranda</a></div>
+  </header>
+
+  <main>
+    <section class="photo-studio" id="photoStudio">
+      <video id="photoVideo" autoplay playsinline muted hidden></video>
+      <div class="studio-camera-column">
+      <div class="studio-heading"><span class="studio-kicker"><i></i> STUDIO TERBUKA</span><b>ANAK KRAKATAU <em>/</em> SELAT SUNDA</b></div>
+
+      <div class="studio-frame-wrap">
+        <div class="booth-frame" id="boothFrame">
+          <canvas id="liveBoothCanvas" width="426" height="1280" aria-label="Pratinjau kamera di dalam template photobooth"></canvas>
+          <div class="booth-camera-prompt" id="photoPlaceholder"><span><i class="fa-solid fa-video"></i></span><b>Aktifkan kamera</b><small>Izinkan akses kamera untuk melihat pratinjau langsung.</small><button id="activatePhotoCamera" type="button">Buka kamera <i class="fa-solid fa-arrow-right"></i></button></div>
+          <div class="booth-countdown" id="boothCountdown" hidden aria-live="assertive"></div>
+          <div class="booth-flash" id="boothFlash" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <div class="studio-mark"><img src="volcanoes-transparent.png" alt="" /><span>VULCANEOS<small>FIELD PHOTO STUDIO</small></span></div>
+      </div>
+
+      <div class="studio-control-column">
+      <section class="template-picker" aria-label="Pilih template photobooth">
+        <span class="picker-label">PILIH TEMPLATE <small id="templateChoiceLabel">03 · POLAROID</small></span>
+        <div class="template-options">
+          <button class="template-option" type="button" data-template="1" aria-pressed="false" aria-label="Pilih template Volcano satu"><img data-template-thumb="1" src="photoboothtemp1.jpeg" alt="" /><span><b>01</b><small>Volcano</small></span></button>
+          <button class="template-option" type="button" data-template="2" aria-pressed="false" aria-label="Pilih template Ocean dua"><img data-template-thumb="2" src="photoboothtemp2.jpeg" alt="" /><span><b>02</b><small>Ocean</small></span></button>
+          <button class="template-option is-selected" type="button" data-template="3" aria-pressed="true" aria-label="Pilih template Polaroid"><img data-template-thumb="3" alt="" /><span><b>03</b><small>Polaroid</small></span></button>
+        </div>
+      </section>
+
+      <section class="filter-picker" aria-label="Pilih filter foto">
+        <label class="filter-select-label" for="photoFilter"><span><i class="fa-solid fa-wand-magic-sparkles"></i> FILTER FOTO</span><small>Efek lokal</small></label>
+        <select class="photo-filter-select" id="photoFilter">
+          <option value="none">Original</option>
+          <option value="halftone">Halftone · Vintage Comic</option>
+          <option value="popart">Pop Art · Warhol</option>
+          <option value="toon">Cartoon · Toon 2D</option>
+          <option value="moody">Moody · Dark Cinematic</option>
+          <option value="teal-orange">Teal and Orange</option>
+          <option value="mist">Black Glow · Mist</option>
+          <option value="retro-black">Retro Black · Film Noir</option>
+        </select>
+        <small class="filter-note">Cartoon adalah efek ilustrasi 2D, bukan pemrosesan AI.</small>
+      </section>
+
+      <div class="studio-status" id="photoCameraStatus"><i></i><span>KAMERA BELUM AKTIF</span></div>
+      <div class="studio-capture">
+        <div class="capture-copy"><b id="captureTitle">Tiga momen, satu cerita.</b><span id="captureHint">Pilih kotak untuk menentukan foto yang ingin diambil atau diulang.</span></div>
+        <div class="photo-slots" id="photoSlotButtons" aria-label="Pilih kotak foto">
+          <button type="button" data-photo-slot="0" class="is-current"><i>01</i><span id="slotLabel0">Kosong</span></button>
+          <button type="button" data-photo-slot="1"><i>02</i><span id="slotLabel1">Kosong</span></button>
+          <button type="button" data-photo-slot="2"><i>03</i><span id="slotLabel2">Kosong</span></button>
+        </div>
+        <button class="booth-shutter" id="takePhoto" type="button" disabled><span><i class="fa-solid fa-camera"></i></span><b id="shutterLabel">Ambil foto 1</b></button>
+        <span class="capture-privacy"><i class="fa-solid fa-lock"></i> Foto diproses di perangkat ini</span>
+      </div>
+      </div>
+    </section>
+
+    <section class="photo-output-section" id="photoOutputSection" hidden>
+      <div class="output-heading"><span class="studio-kicker"><i></i> HASIL PHOTOBOOTH</span><h1>Tinjau sebelum <em>disimpan.</em></h1><p>Template bisa diganti tanpa mengulang tiga jepretan.</p></div>
+      <div class="output-workspace">
+          <div class="output-preview-wrap"><img id="photoOutput" alt="Hasil tiga foto di dalam template VULCANEOS" /></div>
+        <aside class="output-controls">
+          <section class="output-layout-group" aria-label="Pilih gaya unduhan">
+            <span class="picker-label">GAYA CETAKAN <small>UNTUK PREVIEW DAN UNDUHAN</small></span>
+            <div class="output-layout-options">
+              <button class="output-layout-option is-selected" type="button" data-output-layout="camera" aria-pressed="true"><i class="fa-solid fa-camera-retro"></i><span><b>Dengan kamera</b><small>Kamera dan strip cetak</small></span></button>
+              <button class="output-layout-option" type="button" data-output-layout="original" aria-pressed="false"><i class="fa-regular fa-image"></i><span><b>Template asli</b><small>Frame foto saja</small></span></button>
+            </div>
+          </section>
+          <section class="output-template-group" aria-label="Pilih template hasil">
+          <span class="picker-label">PILIH TEMPLATE <small>PREVIEW AKHIR</small></span>
+          <div class="output-template-options">
+            <button class="output-template" type="button" data-template="1" aria-pressed="false"><img src="photoboothtemp1.jpeg" alt="" /><span><b>01 · Volcano</b><small>Frame lava Anak Krakatau</small></span><i class="fa-regular fa-circle-check"></i></button>
+            <button class="output-template" type="button" data-template="2" aria-pressed="false"><img src="photoboothtemp2.jpeg" alt="" /><span><b>02 · Ocean</b><small>Frame kehidupan laut</small></span><i class="fa-regular fa-circle-check"></i></button>
+            <button class="output-template is-selected" type="button" data-template="3" aria-pressed="true"><img data-template-thumb="3" alt="" /><span><b>03 · Polaroid</b><small>Frame kamera analog VULCANEOS</small></span><i class="fa-regular fa-circle-check"></i></button>
+          </div>
+          </section>
+          <section class="output-filter-group" aria-label="Pilih filter hasil">
+          <label class="filter-select-label" for="outputPhotoFilter"><span><i class="fa-solid fa-wand-magic-sparkles"></i> FILTER FOTO</span><small>Masih bisa disesuaikan</small></label>
+          <select class="photo-filter-select" id="outputPhotoFilter">
+            <option value="none">Original</option>
+            <option value="halftone">Halftone · Vintage Comic</option>
+            <option value="popart">Pop Art · Warhol</option>
+            <option value="toon">Cartoon · Toon 2D</option>
+            <option value="moody">Moody · Dark Cinematic</option>
+            <option value="teal-orange">Teal and Orange</option>
+            <option value="mist">Black Glow · Mist</option>
+            <option value="retro-black">Retro Black · Film Noir</option>
+          </select>
+          <label class="filter-select-label download-size-label" for="downloadSize"><span><i class="fa-solid fa-expand"></i> UKURAN PNG</span><small>Untuk unduhan</small></label>
+          <select class="photo-filter-select download-size-select" id="downloadSize">
+            <option value="large">852 × 2560 px · Resolusi tinggi</option>
+            <option value="mobile">600 × 1800 px · Ringkas</option>
+          </select>
+          </section>
+          <div class="output-actions"><button class="output-retake" id="retakePhoto" type="button"><i class="fa-solid fa-rotate-left"></i> Ulangi sesi foto</button><button class="output-download" id="savePhoto" type="button"><i class="fa-solid fa-download"></i> Unduh foto PNG</button></div>
+          <p class="output-privacy"><i class="fa-solid fa-lock"></i> Foto tetap di perangkatmu dan tidak diunggah.</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <script src="photo-booth.js?v=20261109-17"></script>
+</body>
+</html>

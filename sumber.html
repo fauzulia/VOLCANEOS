@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f4f3ee" />
+  <meta name="description" content="Kumpulan sumber berita, referensi ilmiah, dan dataset VULCANEOS." />
+  <title>Sumber | VULCANEOS</title>
+  <script>
+    try {
+      if (localStorage.getItem('vulcaneos-home-theme') === 'night') {
+        document.documentElement.dataset.homeTheme = 'night';
+        document.querySelector('meta[name="theme-color"]').content = '#101820';
+      }
+    } catch (error) {
+      console.warn('Preferensi tema tidak dapat dibaca.', error);
+    }
+  </script>
+  <link rel="icon" type="image/png" sizes="32x32" href="volcanoes-favicon-32.png?v=2" />
+  <link rel="icon" type="image/png" sizes="512x512" href="volcanoes-favicon.png?v=2" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=remove-marker-1" />
+  <link rel="stylesheet" href="landing-v2.css?v=home-layout-3" />
+  <link rel="stylesheet" href="logo.css" />
+  <link rel="stylesheet" href="pages.css?v=sources-3" />
+  <link rel="stylesheet" href="home-theme.css?v=5" />
+</head>
+<body class="landing-body sources-page">
+  <div class="landing-page sources-page">
+    <header class="landing-nav home-nav">
+      <a class="landing-brand" href="index.html" aria-label="VULCANEOS beranda">
+        <span class="landing-brand-mark"><img src="volcanoes-transparent.png" alt="" /></span>
+        <span><strong>VULCANEOS</strong><small>VOLCANIC &amp; OCEAN INTELLIGENCE</small></span>
+      </a>
+      <nav class="landing-links" aria-label="Navigasi utama">
+        <a href="peta.html">Peta</a>
+        <a href="index.html">Beranda</a>
+        <a href="latar-belakang.html">Latar belakang</a>
+        <a href="tujuan.html">Tujuan</a>
+        <a href="simulasi.html">Simulasi</a>
+        <a href="game.html">Game</a>
+        <a href="sumber.html" aria-current="page">Sumber</a>
+      </nav>
+      <button class="home-theme-toggle" type="button" data-home-theme-toggle aria-pressed="false" aria-label="Aktifkan Night mode">
+        <i class="fa-regular fa-moon" aria-hidden="true"></i><span>Night mode</span>
+      </button>
+      <button class="landing-open" type="button" data-enter-webgis>Login Admin <i class="fa-solid fa-arrow-right-to-bracket" aria-hidden="true"></i></button>
+      <button class="landing-menu-toggle" type="button" aria-label="Buka navigasi" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+    </header>
+
+    <main class="sources-main">
+      <section class="sources-hero" data-reveal>
+        <span class="bg-eyebrow">RUJUKAN VULCANEOS</span>
+        <h1>Sumber dan<br/><em>referensi kawasan.</em></h1>
+        <p>Daftar sumber berita, literatur ilmiah, data pengamatan, dan referensi pendukung yang digunakan untuk membangun konteks Anak Krakatau.</p>
+      </section>
+
+      <section class="sources-section" aria-labelledby="sourcesNewsTitle">
+        <div class="sources-section-heading">
+          <span class="bg-eyebrow">01 / BERITA</span>
+          <h2 id="sourcesNewsTitle">Peristiwa Anak Krakatau</h2>
+        </div>
+        <div class="sources-list">
+          <a class="source-item" href="https://www.esdm.go.id/id/media-center/arsip-berita/erupsi-menerus-anak-krakatau-berakhir-aktivitas-gunung-api-kembali-menurun-dan-tetap-dipantau" target="_blank" rel="noopener noreferrer">
+            <span class="source-type">ESDM</span><span class="source-copy"><b>Erupsi Menerus Anak Krakatau Berakhir, Aktivitas Gunung Api Kembali Menurun dan Tetap Dipantau</b><small>Informasi aktivitas gunung api dan pemantauan terbaru.</small></span><i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+          <a class="source-item" href="https://www.bnpb.go.id/berita/update-aktivitas-gunung-anak-krakatau-status-level-iii-masih-berlaku" target="_blank" rel="noopener noreferrer">
+            <span class="source-type">BNPB</span><span class="source-copy"><b>Update Aktivitas Gunung Anak Krakatau, Status Level III Masih Berlaku</b><small>Pembaruan status dan aktivitas Gunung Anak Krakatau.</small></span><i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+          <a class="source-item" href="https://darilaut.id/berita/tubuh-gunung-anak-krakatau-berubah-drastis-setelah-runtuh-2018/amp" target="_blank" rel="noopener noreferrer">
+            <span class="source-type">DARILAUT.ID</span><span class="source-copy"><b>Tubuh Gunung Anak Krakatau Berubah Drastis Setelah Runtuh 2018</b><small>Ulasan perubahan tubuh gunung setelah peristiwa 2018.</small></span><i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+          <a class="source-item" href="https://news.detik.com/berita/d-4356308/fakta-fakta-erupsi-anak-krakatau-hingga-diduga-akibatkan-tsunami" target="_blank" rel="noopener noreferrer">
+            <span class="source-type">DETIK</span><span class="source-copy"><b>Fakta-fakta Erupsi Anak Krakatau Hingga Diduga Akibatkan Tsunami</b><small>Rangkaian fakta erupsi dan kaitannya dengan tsunami.</small></span><i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+          <a class="source-item" href="https://news.detik.com/berita/d-4357420/tsunami-selat-sunda-dipicu-longsor-gunung-anak-krakatau-seluas-64-hektare" target="_blank" rel="noopener noreferrer">
+            <span class="source-type">DETIK</span><span class="source-copy"><b>Tsunami Selat Sunda Dipicu Longsor Gunung Anak Krakatau Seluas 64 Hektare</b><small>Informasi longsoran tubuh gunung sebagai pemicu tsunami.</small></span><i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+          <a class="source-item" href="https://news.detik.com/berita/d-4357477/tsunami-selat-sunda-sampai-ke-daratan-24-menit-setelah-longsor" target="_blank" rel="noopener noreferrer">
+            <span class="source-type">DETIK</span><span class="source-copy"><b>Tsunami Selat Sunda Sampai ke Daratan 24 Menit Setelah Longsor</b><small>Informasi waktu tiba tsunami di daratan.</small></span><i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+      </section>
+
+      <section class="sources-section" aria-labelledby="sourcesJournalTitle">
+        <div class="sources-section-heading">
+          <span class="bg-eyebrow">02 / SUMBER JURNAL</span>
+          <h2 id="sourcesJournalTitle">Publikasi dan jurnal rujukan</h2>
+        </div>
+        <div class="sources-grid">
+          <a class="source-tile" href="https://journal.eng.unila.ac.id/index.php/jgg/article/view/2092" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-book-open"></i><b>Artikel JGG · ID 2092</b><span>Artikel pada laman JGG, Fakultas Teknik Universitas Lampung.</span></a>
+          <a class="source-tile" href="https://jrl.eng.unila.ac.id/index.php/ojs/article/view/104" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-book-open"></i><b>Artikel JRL · ID 104</b><span>Artikel pada laman jurnal JRL, Fakultas Teknik Universitas Lampung.</span></a>
+          <a class="source-tile" href="https://journal.ptipt.id/index.php/fshs" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-book-open"></i><b>Forum for Social and Humanities Studies</b><span>Laman jurnal FSHS, diterbitkan oleh PT Inovasi Penelitian Terpadu.</span></a>
+          <a class="source-tile" href="https://journal.ptipt.id/fshs/issue/view/2" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-book-open"></i><b>FSHS · terbitan nomor 2</b><span>Halaman terbitan jurnal Forum for Social and Humanities Studies.</span></a>
+          <a class="source-tile" href="https://www.mdpi.com/2076-3417/10/2/536" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-book-open"></i><b>Mapping Recent Shoreline Changes Spanning the Lateral Collapse of Anak Krakatau Volcano, Indonesia</b><span>Applied Sciences, 2020 · DOI: 10.3390/app10020536.</span></a>
+          <a class="source-tile" href="https://www.nature.com/articles/s41467-021-22610-5" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-book-open"></i><b>Submarine landslide megablocks show half of Anak Krakatau island failed on December 22nd, 2018</b><span>Nature Communications, 2021 · DOI: 10.1038/s41467-021-22610-5.</span></a>
+          <a class="source-tile" href="https://www.science.org/doi/10.1126/sciadv.aaz1377" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-book-open"></i><b>The 22 December 2018 tsunami from flank collapse of Anak Krakatau volcano during eruption</b><span>Science Advances, 2020 · DOI: 10.1126/sciadv.aaz1377.</span></a>
+        </div>
+      </section>
+
+      <section class="sources-section" aria-labelledby="sourcesDataTitle">
+        <div class="sources-section-heading">
+          <span class="bg-eyebrow">03 / DATA</span>
+          <h2 id="sourcesDataTitle">Dataset dan layanan pendukung</h2>
+        </div>
+        <div class="sources-grid">
+          <a class="source-tile" href="peta.html"><i class="fa-solid fa-map"></i><b>Peta interaktif VULCANEOS</b><span>Visualisasi data spasial-temporal kawasan studi.</span></a>
+          <a class="source-tile" href="JSON/GarisPantaifix_WGS84.geojson"><i class="fa-solid fa-chart-line"></i><b>Data garis pantai</b><span>GeoJSON garis pantai dalam koordinat WGS84.</span></a>
+          <a class="source-tile" href="JSON/SST17.json"><i class="fa-solid fa-temperature-half"></i><b>Parameter oseanografi</b><span>Dataset SST, CHL, dan TSS menurut tahun pengamatan.</span></a>
+          <div class="source-tile"><i class="fa-solid fa-water"></i><b>Parameter gelombang</b><span>Sementara dinonaktifkan. Dataset sebelumnya tidak digunakan sampai tersedia file pengganti yang tervalidasi.</span></div>
+          <a class="source-tile" href="https://oceancolor.gsfc.nasa.gov/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-satellite"></i><b>NASA Ocean Color</b><span>Referensi layanan data warna laut dan penginderaan jauh.</span></a>
+          <a class="source-tile" href="https://volcano.si.edu/volcano.cfm?vn=262000" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-volcano"></i><b>Smithsonian GVP</b><span>Informasi referensi aktivitas vulkanik global.</span></a>
+        </div>
+      </section>
+
+      <section class="sources-section" aria-labelledby="sourcesProvidersTitle">
+        <div class="sources-section-heading">
+          <span class="bg-eyebrow">04 / SUMBER &amp; METODOLOGI</span>
+          <h2 id="sourcesProvidersTitle">Penyedia data dan perangkat analisis</h2>
+        </div>
+        <p class="sources-section-intro">Bagian ini membedakan penyedia basemap, lembaga rujukan, dan perangkat analisis. Layer parameter yang tampil di peta saat ini dimuat dari berkas GeoJSON/JSON proyek; tidak semua sumber berikut dipanggil langsung sebagai layanan live.</p>
+        <div class="sources-grid">
+          <a class="source-tile" href="https://www.usgs.gov/programs/VHP" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-volcano"></i><b>USGS · Volcano Hazards Program</b><span>Rujukan informasi ilmiah dan pemantauan bahaya gunung api. Bukan layanan layer live yang dipanggil langsung oleh peta saat ini.</span></a>
+          <a class="source-tile" href="https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-satellite"></i><b>Esri · World Imagery</b><span>Citra satelit yang digunakan sebagai basemap pada peta. Atribusi citra ditampilkan di bagian bawah frame peta.</span></a>
+          <a class="source-tile" href="https://magma.esdm.go.id/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-mountain-sun"></i><b>PVMBG · MAGMA Indonesia</b><span>Rujukan informasi gunung api dan kebencanaan geologi Indonesia; status pada situs ini bukan feed resmi langsung.</span></a>
+          <a class="source-tile" href="https://earthengine.google.com/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-globe"></i><b>Google Earth Engine</b><span>Platform komputasi geospasial untuk pengolahan dan analisis citra satelit; bukan basemap yang dimuat langsung oleh peta.</span></a>
+          <a class="source-tile" href="https://www.usgs.gov/centers/pcmsc/science/digital-shoreline-analysis-system-dsas" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-chart-line"></i><b>USGS DSAS</b><span>Perangkat analisis perubahan garis pantai. Data proyek memuat 93 transek EPR/NSM untuk periode 2017–2025.</span></a>
+          <a class="source-tile" href="https://www.ecmwf.int/en/forecasts/dataset/ecmwf-reanalysis-v5" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-water"></i><b>ECMWF · ERA5</b><span>Reanalisis atmosfer dan gelombang. Layer gelombang VULCANEOS saat ini dinonaktifkan sampai tersedia dataset pengganti yang tervalidasi.</span></a>
+        </div>
+      </section>
+
+      <section class="sources-section" aria-labelledby="sourcesEducationTitle">
+        <div class="sources-section-heading">
+          <span class="bg-eyebrow">05 / EDUKASI &amp; PETA</span>
+          <h2 id="sourcesEducationTitle">Edukasi kebencanaan dan pemetaan vulkanik</h2>
+        </div>
+        <div class="sources-grid source-image-grid">
+          <a class="source-tile source-image-tile" href="edukasi1.jpeg" target="_blank" rel="noopener noreferrer">
+            <img src="edukasi1.jpeg" alt="Infografik tingkat aktivitas gunung api: Normal, Waspada, Siaga, dan Awas" loading="lazy" />
+            <b>Tingkat aktivitas gunung api</b>
+            <span>Penjelasan tingkat aktivitas gunung api dari Normal hingga Awas.</span>
+          </a>
+          <a class="source-tile source-image-tile" href="edukasi2.jpeg" target="_blank" rel="noopener noreferrer">
+            <img src="edukasi2.jpeg" alt="Infografik kewaspadaan masyarakat di kawasan rawan bencana untuk KRB I, II, dan III" loading="lazy" />
+            <b>Kewaspadaan masyarakat di kawasan rawan bencana</b>
+            <span>Panduan umum kesiapsiagaan masyarakat berdasarkan tingkat kawasan rawan bencana.</span>
+          </a>
+          <a class="source-tile source-image-tile" href="edukasi3.jpeg" target="_blank" rel="noopener noreferrer">
+            <img src="edukasi3.jpeg" alt="Infografik sebaran gunung api aktif di Indonesia dan karakteristik tipe gunung api" loading="lazy" />
+            <b>Mengenal gunung api Indonesia</b>
+            <span>Infografik sebaran dan tipe gunung api di Indonesia.</span>
+          </a>
+          <a class="source-tile source-image-tile" href="pemetaanVulkanik.jpeg" target="_blank" rel="noopener noreferrer">
+            <img src="pemetaanVulkanik.jpeg" alt="Peta sebaran gunung api dan jalur vulkanik di Indonesia" loading="lazy" />
+            <b>Peta vulkanik Indonesia</b>
+            <span>Peta sebaran gunung api dan jalur vulkanik di wilayah Indonesia.</span>
+          </a>
+        </div>
+      </section>
+    </main>
+    <footer class="landing-footer"><a class="landing-brand" href="index.html"><span class="landing-brand-mark"><img src="volcanoes-transparent.png" alt="" /></span><span><strong>VULCANEOS</strong><small>VOLCANIC &amp; OCEAN INTELLIGENCE</small></span></a><span>Portal pemantauan lingkungan pesisir &middot; Selat Sunda</span><span>WEBGIS / 01.0</span></footer>
+  </div>
+  <script src="landing.js"></script>
+</body>
+</html>
